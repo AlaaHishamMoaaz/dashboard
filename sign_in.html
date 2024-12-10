@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background: #fff;
+            padding: 20px;
+            box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+            width: 300px;
+            border-radius: 5px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+            color: var(--primary);
+            font-size: 28px;
+            font-weight: 600;
+        }
+
+        .container .logo h2 {
+            text-align: center;
+            font-size: 18px;
+            color: #191C24;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .form-group input[type="submit"] {
+            background: #009CFF;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .form-group input[type="submit"]:hover {
+            background: #0056b3;
+        }
+
+        .message {
+            text-align: center;
+            color: green;
+        }
+
+        .error {
+            text-align: center;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+          #DASHMIN
+          <h2>Sign In</h2>
+        </div>
+        <form id="signInForm" onsubmit="return validateForm()">
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Sign In">
+            </div>
+        </form>
+        <div id="message" class="message"></div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Here you would typically check the email and password against a database
+            if (email === "user@example.com" && password === "password") {
+                document.getElementById('message').innerText = 'Sign In successful!';
+                document.getElementById('message').className = 'message';
+                return true;
+            } else {
+                document.getElementById('message').innerText = 'Invalid email or password!';
+                document.getElementById('message').className = 'error';
+                return false;
+            }
+        }
+    </script>
+</body>
+</html>

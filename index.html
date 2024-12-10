@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sidebar and Navbar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="sidebar">
+      <div class="logo">
+          #DASHMIN
+      </div>
+      <div class="profile">
+          <img src="imgs/user.jpg" alt="Profile Picture">
+          <p>John Doe</p>
+      </div>
+      <a href="#">Welcome</a>
+      <a href="#">Categories</a>
+      <a href="#">Items</a>
+      <a href="#">Users</a>
+  </div>
+  <div>
+      <div class="navbar">
+          <div class="left">
+              <div class="hamburger"><i class="fa fa-bars"></i></div>
+              <form class="search-form">
+                  <input type="text" placeholder="Search...">
+              </form>
+          </div>
+          <div class="right">
+              <div class="dropdown">
+                  <i class="fa fa-envelope me-lg-2"></i>
+                  <span>messege</span>
+              </div>
+              <div class="dropdown">
+                  <i class="fa fa-bell me-lg-2"></i>
+                  <span>notifications</span>
+              </div>
+              <div class="dropdown profile">
+                  <img src="imgs/user.jpg" alt="Profile Picture">
+                  <span>John Doe</span>
+                  <div class="dropdown-content">
+                      <a href="#">Profile</a>
+                      <a href="#">Settings</a>
+                      <a href="change-password.html">Change Password</a>
+                      <a href="sign_in.html">Logout</a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <main>
+        <div class="button-container">
+            <a href="category.html">Category</a>
+            <a href="item.html">Items</a>
+            <a href="users.html">Users</a>
+        </div>
+        <div class="chart-container">
+          <div class="chart">
+            <div class="row">
+              <h1> Worldwide Sales </h1>
+              <a href="#">Show All</a>
+            </div>
+            <canvas id="groupedBarChart"></canvas>
+          </div>
+            <div class="chart">
+              <div class="row">
+                <h1> Worldwide Sales </h1>
+                <a href="#">Show All</a>
+              </div>
+              <canvas id="lineChart"></canvas>
+            </div>
+        </div>
+    </main>
+  </div>
+
+  <div class="sidebar-right">
+  </div>
+  
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
